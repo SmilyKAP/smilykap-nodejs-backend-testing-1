@@ -20,7 +20,7 @@ describe('PostsService', () => {
   });
 
   it('should find a post', () => {
-    const searchPost = postsService.find('1');
-    expect(searchPost?.text).toEqual('Some pre-existing post');
+    const newPost = postsService.create(post);
+    expect(postsService.find(newPost.id)).toEqual(newPost);
   });
 });
